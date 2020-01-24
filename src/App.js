@@ -10,6 +10,12 @@ class App extends Component {
       { name: 'Crystal', age: 25, belt: 'pink', id: 3 }
     ]
   }
+  componentDidMount(){
+    console.log("just mounted the component.")
+  }
+  componentDidUpdate(prevprops, prevState){
+    console.log(prevState)
+  }
   addNinja = (ninja)=> {
    ninja.id = Math.random() * 1000;
     let ninjas = [...this.state.ninjas, ninja] 
