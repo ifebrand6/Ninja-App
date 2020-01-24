@@ -1,6 +1,7 @@
 import React from 'react';
+import './ninja.css'
 // fucntional component sample
-const Ninjas = ({ninjas}) => {
+const Ninjas = ({ninjas, deleteNinja}) => {
     // const {ninjas}= props
         
         const ninjaList = ninjas.map(ninja => {
@@ -10,6 +11,7 @@ const Ninjas = ({ninjas}) => {
                     <div>Name: {ninja.name}</div>
                     <div>Age: {ninja.age} </div>
                     <div>Belt: {ninja.belt}</div>
+                    <button onClick={()=> {deleteNinja(ninja.id)}}>Delete</button>
                 </div>
             )
         } else {
