@@ -1,0 +1,12 @@
+My advice to another getting their feet wet on coding is to learn the basic of algorithm and programming first.
+Next is "how to solve the real-life problem by using the simplest instance of the problem to create a solution"
+learn this process:
+For example, if I want to replace a "certain color  balls" with black balls in a box with different color balls. 
+This is a real life scenerio, of an event that can happen.
+You might want to write a program to solve program to solve this problem.
+Understanding algorithm and programming concept, you will be able to find a solution easily.
+Like moving on;
+you may use a very simple instance of that problem:
+replace an item in an array with a chosen item.
+to simfliy this: 
+let say the ARRAY BOX contains : 10 green ball, 30 black balls, 19 white balls, 5 purple balls;

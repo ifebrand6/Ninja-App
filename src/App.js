@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Ninjas from './ninja'
+import Ninjas from './ninja';
+import AddNinja from './AddNinja';
 
 class App extends Component {
   state = {
@@ -9,11 +10,37 @@ class App extends Component {
       { name: 'Crystal', age: 25, belt: 'pink', id: 3 }
     ]
   }
-  render() {
+  componentDidMount(){
+    console.log("just mounted the component.")
+  }
+  componentDidUpdate(prevprops, prevState){
+    console.log(prevState)
+  }
+  addNinja = (ninja)=> {
+   ninja.id = Math.random() * 1000;
+    let ninjas = [...this.state.ninjas, ninja] 
+    this.setState({
+      ninjas: ninjas
+    
+    })  
+    console.log(ninja)
+  }
+  deleteNinja = (id) =>{
+    console.log(`note with id no: ${id} has been removed`)
+    let ninjas = this.state.ninjas.filter(ninja =>{
+      return ninja.id !== id
+    })
+    this.setState({
+      ninjas: ninjas
+    })
+  }
+  
+  render() { 
     return (
       <div className="App">
         <h1>My first React app</h1>
-        <Ninjas ninjas={this.state.ninjas}/>
+        <Ninjas deleteNinja={this.deleteNinja} ninjas={this.state.ninjas}/> 
+        <AddNinja addNinja={this.addNinja}/>
       </div>
     );
   }
